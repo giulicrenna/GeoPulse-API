@@ -15,3 +15,75 @@
 0:35/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
 0:35/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
 0:36/6-5-2023 -> [DB 200.58.121.156]: Bad phone number: 5224544.
+
+19:56/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+19:56/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+19:59/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:2/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:4/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:5/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:7/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:8/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:9/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:9/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:10/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:10/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:12/6-5-2023 -> [error] : syntax error at or near "'users'"
+LINE 1: DELETE FROM 'users' WHERE 'id' = 5
+                    ^
+
+20:14/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:16/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:16/6-5-2023 -> [error] : syntax error at or near "'users'"
+LINE 1: DELETE FROM 'users' WHERE 'id' = 5
+                    ^
+
+20:23/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:24/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:24/6-5-2023 -> [error] : syntax error at or near "'users'"
+LINE 1: DELETE FROM 'users' WHERE 'id' = 5;
+                    ^
+
+20:25/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:25/6-5-2023 -> [DB 200.58.121.156]: Bad phone number: 52245523424.
+20:25/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:25/6-5-2023 -> [DB 200.58.121.156]: Bad phone number: 522455223424.
+20:25/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:25/6-5-2023 -> [error] : syntax error at or near "'users'"
+LINE 1: INSERT INTO 'users' (
+                    ^
+
+20:27/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:27/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:27/6-5-2023 -> [DB] Usuario registrado: Teresa Montero
+20:28/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:28/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:28/6-5-2023 -> [error] : not all arguments converted during string formatting
+20:28/6-5-2023 -> [error] : not all arguments converted during string formatting
+20:28/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:28/6-5-2023 -> [error] : syntax error at or near "{"
+LINE 1: DELETE FROM {table} WHERE 'id' = 5;
+                    ^
+
+20:28/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:28/6-5-2023 -> [error] : invalid input syntax for type integer: "id"
+LINE 1: DELETE FROM users WHERE 'id' = 5;
+                                ^
+
+20:29/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:29/6-5-2023 -> [error] : invalid input syntax for type integer: "id"
+LINE 1: DELETE FROM users WHERE ('id') = (5);
+                                 ^
+
+20:29/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:33/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:34/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:34/6-5-2023 -> [DB] Entry deleted successfully based on id:5
+20:34/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:34/6-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
+20:34/6-5-2023 -> [DB] Usuario registrado: Irma Mirabelli

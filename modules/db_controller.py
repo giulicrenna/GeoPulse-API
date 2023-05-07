@@ -6,7 +6,7 @@ user : str = 'postgres'
 password : str = 'kirchhoff2002'
 server : str = '200.58.121.156'
 port : str = '5432'
-
+table : str = 'users'
 
 class Controller:
     def __init__(self) -> None:
@@ -18,6 +18,19 @@ class Controller:
         self.cursor = self.conn.cursor()
         log(f"[DB] Connection to {server}:{port} has been succesfully stablished.")
         
+    def remove_entry(self,
+                     column : str,
+                     id : int) -> None:
+        query : str = f"""DELETE FROM {table} WHERE {column} = {id};"""
+        
+        try:
+            self.cursor.execute(query)
+            self.conn.commit()
+            log(f"[DB] Entry deleted successfully based on {column}:{id}")
+        except Exception as ex:
+            log(f"[error] : {ex}")
+            return
+    
     def add_entry(self,
                   nombre : str,
                   apellido : str,
@@ -29,8 +42,10 @@ class Controller:
         if(telefono[0] != '+' and len(telefono) < 13):
             log(f'[DB {server}]: Bad phone number: {telefono}.')
             return 
-        
-        query : str = """INSERT INTO users (
+
+        #cursor.execute('SELECT * from table where id = %(some_id)d', {'some_id': 1234})
+
+        query : str = f"""INSERT INTO {table} (
                    edad,
                    nombre,
                    apellido,
