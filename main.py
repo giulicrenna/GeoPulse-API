@@ -1,50 +1,79 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
+from fastapi.staticfiles import StaticFiles
+import uvicorn
+
+import time
+import calendar
+
+from modules.decryptor import decrypt
 from modules.db_controller import Controller
 from modules.logger import log
 
 #  uvicorn main:app --reload
 
-db = Controller()
+#db = Controller()  
 app = FastAPI()
 
-class DatabaseEntry(BaseModel):
-    nombre : str 
-    apellido : str
-    telefono : str
-    dispositivos_asociados : str
-    edad : int    
+app.mount("/test", StaticFiles(directory="./server/", html=True), name="API test")
+
 
 @app.get("/")
 async def root() -> None:
-    return {'Status', 'Ok'}
-
+     return {'status' : 'ok'}
+     
 @app.get("/register")
-async def register() -> None:
-    ... 
-
-# http://127.0.0.1:8000/login?nombre=giuliano&apellido=crenna&mail=giulicrenna@gmail.com&telefono=214263&edad=63
-@app.post("/register")
-async def login(nombre : str,
-                apellido : str,
-                telefono : str,
-                edad : int,
-                dispositivo_asociado : str) -> None:
-    db.add_entry(nombre=nombre,
-                         apellido=apellido,
-                         edad=edad,
-                         telefono=telefono,
-                         dispositivo_asociado=dispositivo_asociado)
-        
-    return {'Status', 'Ok'}
-
-@app.post("/delete")
-async def login(column : str,
-                id : int) -> None:
-    db.remove_entry(column=column,
-                    id=id)
+async def auth(type :str,
+                   username : str,
+                   fullname : str,
+                   mail : str,
+                   password : str) -> None:
     
-    return {'Status', 'Ok'}
+    
+    if type == 'register':
+        log(f"[register] {type} : new registration attempt, sending mail to {mail}")
+        print('Enviando Mail')
+        return {'status' : 'ok'}
+    
+    elif type == 'login':
+        log(f"[login] new login by {mail}")
+        print('Logueando') 
+        return {'status' : 'ok'}
+    
+    log(f"[auth] {type} : bad request")
+    return {'status' : 'bad'}
 
+@app.get("/data")
+async def data(get : str,
+               uuid : str,
+               mail : str):
+    uuid_d : str = decrypt(uuid)
+    print(uuid_d)
+     
+    if get == 'loc':
+        return { 
+            'uuid' : uuid,
+            'latitude' : 87.34453453,
+            'longitude' : 34.435435,
+            'timestamp' : calendar.timegm(time.gmtime())
+        }
+    elif get == 'history':
+        return {
+            'uuid' : uuid,
+            'latitude' : [87.34453453, 48.41891651, 87.186161],
+            'longitude' : [34.435435, 87.8494465, 84.548964],
+            'timestamp' : [calendar.timegm(time.gmtime()), 8498465849845, 46546486]
+        }
+        
+    return {'status' : 'bad'}
 
+@app.get("/report")
+async def report(uuid : str,
+                 latitude : str,
+                 longitude : str,
+                 timestamp : str,
+                 mail : str):
+    
+    print(f"Reported: {decrypt(uuid)}")
+    print(f"device at:\nLat: {latitude}\nLong: {longitude}")
+    
+    return {"status" : "reported"}

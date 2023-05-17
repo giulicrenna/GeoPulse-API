@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>API test</title>
+</head>
+
+<body>
+    <header
+        style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-bottom: 0 !important;">
+    </header>
+    <main class="container">
+            <tr>
+                <div class="container">
+                    <h1 style="display: flex; justify-content: center;">API TEST SERVER</h1>
+                </div>
+                <h4>REGISTER</h4>
+                <form action="/register" id="register"> 
+                    <div class="grid">
+                        <label for="type">
+                            Type
+                            <select id="type" name="type" from="register">
+                                <option value="register">Register</option>
+                                <option value="login">Login</option>
+                              </select>
+                        </label>                        
+                        <label for="username">
+                            Username
+                            <input id="username" maxlength="100" name="username" value="default" size="100" type="text">
+                        </label>
+                        <label for="fullname">
+                            Full name
+                            <input id="fullname" maxlength="100" name="fullname" value="default" size="100" type="text">
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="mail">
+                            Mail
+                            <input id="mail" maxlength="100" name="mail" value="default@gmail.com" size="100" type="text">
+                        </label>
+                        <label for="password">
+                            Password
+                            <input id="password" maxlength="16" name="password" value="default" size="100" type="password" />
+                        </label>
+                    </div>
+                        
+                    <input type="submit" value="Guardar usuario">
+                </form>
+
+                <form action="/validate">
+                    <h4>VALIDATE</h4>
+                    <div class="container">
+                        <label for="validate">
+                            PIN
+                            <input id="validate" maxlength="16" name="validate" size="100" type="text" />
+                        </label>
+                        <label for="mail">
+                            MAIL
+                            <input id="mail" maxlength="16" name="mail" size="100" type="text" />
+                        </label>
+                    </div>
+                </form>
+
+                <hr>
+
+                <form action="/login">
+                    <h4>LOGIN</h4>
+                    <div class="grid">
+                        <label for="mail">
+                            mail
+                            <input id="mail" maxlength="100" name="mail" size="100" type="text">
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="password">
+                            Password
+                            <input id="password" maxlength="100" name="password" size="100" type="password">
+                        </label>
+                    </div>
+
+                    <input type="submit" value="Entrar">
+                </form>
+
+                <hr>
+                
+                <form action="/data" id="data">
+                    <h4>LOCATION</h4>
+                    <div class="container">
+                        <label for="get">
+                            GET
+                            <select id="get" name="get" form="data">
+                                <option value="loc">Location</option>
+                                <option value="history">History</option>
+                            </select>
+                        </label>   
+                        <label for="uuid">
+                            UUID
+                            <input id="uuid" maxlength="100" value="EJJEQHS1H1QZHMM" name="uuid" required="" size="100" type="text">
+                        </label>
+                        <label for="mail">
+                            MAIL
+                            <input id="mail" maxlength="100" name="mail" value="default@gmail.com" required="" size="100" type="text">
+                        </label>
+                    </div>
+                    <input type="submit" value="LOCALIZAR">
+                </form>
+
+                <hr>
+
+                <form action="/report">
+                    <h4>NOTIFY LOCATION</h4>
+                    <div class="grid">
+                        <label for="uuid">
+                            UUID
+                            <input id="uuid" maxlength="100" name="uuid" value="EJJEQHS1H1QZHMM" required="" size="100" type="text">
+                        </label>
+                    </div>
+                    <label for="mail">
+                        MAIL
+                        <input id="mail" maxlength="100" name="mail" value="default@gmail.com" required="" size="100" type="text">
+                    </label>
+                    <div class="grid">
+                        <label for="latitude">
+                            LATITUDE
+                            <input id="latitude" maxlength="100" name="latitude" value="84.15686" required="" size="100" type="text">
+                        </label>
+                        <label for="longitude">
+                            LONGITUDE
+                            <input id="longitude" maxlength="100" name="longitude" value="48.1865151" required="" size="100" type="text">
+                        </label>
+                        <label for="timestamp">
+                            TIMESTAMP
+                            <input id="timestamp" maxlength="100" name="timestamp" value="1689546582168" required="" size="100" type="text">
+                        </label>
+                    </div>
+
+                    <input type="submit" value="Notificar">
+                </form>
+                
+                <hr>
+
+                <form action="/availability">
+                    <h4>AVAILABILITY</h4>
+                    <div class="container">
+                        <label for="uuid">
+                            UUID
+                            <input id="uuid" maxlength="100" name="uuid" required="" size="100" type="text">
+                        </label>
+                        <input type="submit" value="CHECKEAR">
+                    </div>
+                </form>
+
+                <hr>
+            </tr>
+        </table>
+    </main>
+</body>

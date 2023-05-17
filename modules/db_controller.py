@@ -1,5 +1,37 @@
-import psycopg2
+import mysql.connector
 from .logger import log 
+
+"""
+============= TABLAS =============
+users:
+-username
+-fullname
+-mail
+-password
+
+reports:
+-uuid
+-timestamp
+-latitude
+-longitude
+
+devices:
+-mail
+-uuid
+
+payment:
+-mail
+-expiration_date
+-expiration_status
+-credit_card_number
+-credit_card_fullname
+-credit_card_pin
+-credit_card_expiration_date
+
+temporal:
+-mail
+-pin
+"""
 
 database : str = 'usuarios_test'
 user : str = 'postgres'
@@ -10,14 +42,26 @@ table : str = 'users'
 
 class Controller:
     def __init__(self) -> None:
-        self.conn = psycopg2.connect(database = database,
+        self.conn = mysql.connector.connect(
+            host = server,
             user = user,
             password = password,
-            host = server,
-            port = port)
-        self.cursor = self.conn.cursor()
-        log(f"[DB] Connection to {server}:{port} has been succesfully stablished.")
+            database = database
+        ) 
         
+        if self.conn:
+            log(f"[DB] Connection to {server}:{port} has been succesfully stablished.")
+        else:
+            log(f"[DB] Connection to {server}:{port} failed.")
+        
+        self.cursor = self.conn.cursor()
+    
+    def create_db(self,
+                  db_name : str) -> None:
+        
+        self.cursor.execute(f"CREATE DATABASE {db_name}")
+        return
+    
     def remove_entry(self,
                      column : str,
                      id : int) -> None:
