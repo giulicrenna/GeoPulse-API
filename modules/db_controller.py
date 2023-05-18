@@ -1,6 +1,8 @@
 import mysql.connector
-from .logger import log 
+import random
 
+from .logger import log 
+from .configs import *
 """
 ============= TABLAS =============
 users:
@@ -33,12 +35,6 @@ temporal:
 -pin
 """
 
-database : str = 'usuarios_test'
-user : str = 'postgres'
-password : str = 'kirchhoff2002'
-server : str = '200.58.121.156'
-port : str = '5432'
-table : str = 'users'
 
 class Controller:
     def __init__(self) -> None:
@@ -56,16 +52,21 @@ class Controller:
         
         self.cursor = self.conn.cursor()
     
-    def create_db(self,
-                  db_name : str) -> None:
+    def get_data(self,
+                 key : str,
+                 table : str) -> list:
+        query : str = f"SELECT {key} FROM {table}"
         
-        self.cursor.execute(f"CREATE DATABASE {db_name}")
-        return
+        self.cursor.execute(query)
+        data : list = self.cursor.fetchall()
+        data = [x[0] for x in data]
+       
+        return data
     
     def remove_entry(self,
                      column : str,
                      id : int) -> None:
-        query : str = f"""DELETE FROM {table} WHERE {column} = {id};"""
+        query : str = f"""DELETE FROM {column} WHERE {column} = {id};"""
         
         try:
             self.cursor.execute(query)
@@ -74,6 +75,42 @@ class Controller:
         except Exception as ex:
             log(f"[error] : {ex}")
             return
+    
+    def generate_pin(self) -> str:
+        pin : str = ""
+        
+        for i in range(6):
+            pin += str(random.randint(0, 9))
+        
+        log(f"[DB] New pin generated : {pin}")
+        return pin
+    """
+    This function add a new pin into temporal 
+    data for the account verification
+    """
+    def add_registration_attempt(self,
+                                 mail : str) -> str:
+        
+        register_pins : str = self.get_data("pin", "temporal")
+        pin : str = self.generate_pin()
+        
+        while pin in register_pins or pin == "000000":
+            pin = self.generate_pin()
+            
+        query : str = "INSERT INTO temporal (mail, pin) \
+            values (%s, %s)" 
+        values : tuple = (mail, pin)
+        
+        try:
+            self.cursor.execute(query, values)
+            self.conn.commit()
+            
+        except Exception as e:
+            log(f"[DB] Exception: {e}")
+            return "000000"
+            
+        log(f"[DB] Pin : {pin} given to {mail}")
+        return pin
     
     def add_entry(self,
                   nombre : str,
@@ -89,7 +126,7 @@ class Controller:
 
         #cursor.execute('SELECT * from table where id = %(some_id)d', {'some_id': 1234})
 
-        query : str = f"""INSERT INTO {table} (
+        query : str = f"""INSERT INTO {conf.table} (
                    edad,
                    nombre,
                    apellido,

@@ -185,3 +185,85 @@ LINE 1: DELETE FROM users WHERE ('id') = (5);
 23:43/16-5-2023 -> [login] new login by default@gmail.com
 23:43/16-5-2023 -> [DB] Connection to 200.58.121.156:5432 has been succesfully stablished.
 1:6/17-5-2023 -> [register] register : new registration attempt, sending mail to default@gmail.com
+15:19/18-5-2023 -> [DB] Connection to giuliscloud.duckdns.org:3306 has been succesfully stablished.
+15:20/18-5-2023 -> [DB] Pin :  given to giulicrenna@gmail.com
+15:20/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:22/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:22/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:22/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:23/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:23/18-5-2023 -> [DB] Pin :  given to giulicrenna@gmail.com
+15:23/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:23/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:23/18-5-2023 -> [DB] Pin :  given to giulicrenna@gmail.com
+15:23/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:23/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:24/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:24/18-5-2023 -> [DB] New pin generated : 020751
+15:24/18-5-2023 -> [DB] Pin : 020751 given to giulicrenna@gmail.com
+15:24/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:25/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:25/18-5-2023 -> [DB] New pin generated : 301163
+15:25/18-5-2023 -> [DB] Pin : 301163 given to giulicrenna@gmail.com
+15:25/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:27/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:27/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:27/18-5-2023 -> [DB] New pin generated : 286483
+15:27/18-5-2023 -> [DB] Pin : 286483 given to giulicrenna@gmail.com
+15:27/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:27/18-5-2023 -> [DB] New pin generated : 562200
+15:27/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'giulicrenna@gmail.com' for key 'temporal.mail'
+15:27/18-5-2023 -> [DB] Pin : 562200 given to giulicrenna@gmail.com
+15:27/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:28/18-5-2023 -> [DB] New pin generated : 146951
+15:28/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'giulicrenna@gmail.com' for key 'temporal.mail'
+15:28/18-5-2023 -> [DB] Pin : 146951 given to giulicrenna@gmail.com
+15:28/18-5-2023 -> [register] register : new registration attempt, sending mail to giulicrenna@gmail.com
+15:28/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:41/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:42/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:42/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:42/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:43/18-5-2023 -> [DB] New pin generated : 342959
+15:43/18-5-2023 -> [DB] Pin : 342959 given to default@gmail.com
+15:43/18-5-2023 -> [register] register : new registration attempt, sending mail to default@gmail.com
+15:43/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:44/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:44/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:44/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:45/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:45/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:45/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:45/18-5-2023 -> [DB] New pin generated : 869491
+15:45/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:45/18-5-2023 -> [register] Database exception
+15:46/18-5-2023 -> [DB] New pin generated : 707037
+15:46/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:46/18-5-2023 -> [register] Database exception
+15:47/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:47/18-5-2023 -> [DB] New pin generated : 566214
+15:47/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:47/18-5-2023 -> [register] Database exception
+15:47/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:48/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:48/18-5-2023 -> [DB] New pin generated : 406154
+15:48/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:48/18-5-2023 -> [register] Database exception
+15:48/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:48/18-5-2023 -> [DB] New pin generated : 345479
+15:48/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:48/18-5-2023 -> [register] Database exception
+15:48/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:48/18-5-2023 -> [DB] New pin generated : 899838
+15:48/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:48/18-5-2023 -> [register] Database exception
+15:49/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:49/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:49/18-5-2023 -> [DB] New pin generated : 569759
+15:49/18-5-2023 -> [DB] Exception: 1062 (23000): Duplicate entry 'default@gmail.com' for key 'temporal.mail'
+15:49/18-5-2023 -> [register] Database exception
+15:49/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:49/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:49/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:53/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.
+15:54/18-5-2023 -> [DB] Connection to 190.2.106.62:3306 has been succesfully stablished.

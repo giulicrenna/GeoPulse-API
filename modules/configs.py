@@ -1,0 +1,5 @@
+database : str = 'geopulse_test'
+user : str = 'giuliano'
+password : str = 'kirchhoff2002'
+server : str = '190.2.106.62'
+port : str = '3306'

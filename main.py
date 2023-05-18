@@ -8,11 +8,14 @@ import calendar
 from modules.decryptor import decrypt
 from modules.db_controller import Controller
 from modules.logger import log
+import modules.configs as conf
 
 #  uvicorn main:app --reload
 
 #db = Controller()  
 app = FastAPI()
+DB = Controller()
+
 
 app.mount("/test", StaticFiles(directory="./server/", html=True), name="API test")
 
@@ -28,10 +31,13 @@ async def auth(type :str,
                    mail : str,
                    password : str) -> None:
     
-    
     if type == 'register':
+        pin : str = DB.add_registration_attempt(mail)
+        if(pin == "000000"):
+            log(f"[register] Database exception")
+            return {'status' : 'database_exception'}
+            
         log(f"[register] {type} : new registration attempt, sending mail to {mail}")
-        print('Enviando Mail')
         return {'status' : 'ok'}
     
     elif type == 'login':
